@@ -1,7 +1,7 @@
 from django.shortcuts import render
-import datetime
+from .models import Vacancy
 
-def home(request):
-    date = datetime.datetime.now().date()
-    name = 'Kevin'
-    _context_ = {'date': date, 'name': name}
+
+def home_view(request):
+    qs = Vacancy.objects.all()
+    return render(request, 'home.html', {'object_list': qs})
