@@ -14,4 +14,4 @@ def home_view(request):
         if language:
             _filter['language__slug'] = language
         qs = Vacancy.objects.filter(**_filter)
-    return render(request, 'fdp/home.html', {'object_list': qs, 'form': form})
+    return render(request, 'scraping/home.html', {'object_list': qs, 'form': form})

@@ -7,7 +7,7 @@ import jsonfield.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('fdp', '0001_initial'),
+        ('scraping', '0001_initial'),
     ]
 
     operations = [

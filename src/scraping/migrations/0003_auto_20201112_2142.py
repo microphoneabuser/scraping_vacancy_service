@@ -2,14 +2,14 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import fdp.models
+import scraping.models
 import jsonfield.fields
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('fdp', '0002_error'),
+        ('scraping', '0002_error'),
     ]
 
     operations = [
@@ -21,9 +21,9 @@ class Migration(migrations.Migration):
             name='Url',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('url_data', jsonfield.fields.JSONField(default=fdp.models.default_urls)),
-                ('city', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='fdp.City', verbose_name='Город')),
-                ('language', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='fdp.Language', verbose_name='Язык программирования')),
+                ('url_data', jsonfield.fields.JSONField(default=scraping.models.default_urls)),
+                ('city', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='scraping.City', verbose_name='Город')),
+                ('language', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='scraping.Language', verbose_name='Язык программирования')),
             ],
             options={
                 'unique_together': {('city', 'language')},

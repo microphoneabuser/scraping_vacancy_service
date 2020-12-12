@@ -41,8 +41,8 @@ class MyUser(AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False, verbose_name='Является администратором')
-    city = models.ForeignKey('fdp.City', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Город')
-    language = models.ForeignKey('fdp.Language', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Язык программирования')
+    city = models.ForeignKey('scraping.City', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Город')
+    language = models.ForeignKey('scraping.Language', on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Язык программирования')
     email_sub = models.BooleanField(default=True, verbose_name='Подписка на рассылку')
 
     objects = MyUserManager()

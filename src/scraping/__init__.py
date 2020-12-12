@@ -1,1 +1,1 @@
-default_app_config = 'fdp.apps.FdpConfig'
+default_app_config = 'scraping.apps.ScrapingConfig'
